@@ -1,4 +1,4 @@
-*kanamono.txt*  Kanagawa colors with readable light text and a distinct gutter.
+*kanamono.txt*  Kanagawa colors with readable light text and a uniform gutter.
 
 USAGE                                                       *kanamono*
     :colorscheme kanamono

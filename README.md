@@ -1,17 +1,18 @@
 <p align="center"><img src="assets/banner.svg" alt="kanamono" width="100%"></p>
 
-Kanagawa com vermelho reservado para erros e remoções, coluna de números com fundo próprio e modo claro com mais contraste. Baseado na estrutura e nas integrações do [onemono.nvim](https://github.com/amonteirom96/onemono.nvim), com cores adaptadas do [kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim).
+Kanagawa com vermelho reservado para erros e remoções, coluna de números com o mesmo fundo do editor e modo claro com mais contraste. Baseado na estrutura e nas integrações do [onemono.nvim](https://github.com/amonteirom96/onemono.nvim), com cores adaptadas do [kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim).
 
 <p align="center"><img src="assets/preview.svg" alt="Prévia ilustrada das variantes light e dark" width="100%"></p>
 
 ## Aparência
 
 - **Dark:** fundo Wave (`#1f1f28`) e texto Fuji White (`#dcd7ba`).
-- **Light:** papel Lotus (`#f2ecbc`) com texto mais escuro (`#353545`).
+- **Light:** papel Lotus (`#f2ecbc`) com texto cinza Lotus (`#545464`).
 - Strings verdes, funções azuis, tipos aqua, constantes e números laranja, palavras-chave violetas e operadores dourados. `mono = true` deixa o código monocromático.
 - Vermelho nos erros, diagnósticos de erro, marcadores de erro e remoções do Git. O modo Visual da statusline usa violeta.
-- Fundo próprio em números, sinais e dobras, inclusive na linha atual. A opção de transparência remove esses fundos.
-- Texto principal com contraste de **10,02:1 no light** e **11,26:1 no dark**. Todos os acentos passam de **4,5:1** no fundo normal e em `surface2`; comentários passam de 4,5:1 no fundo normal. Cores decorativas e texto atenuado da interface usam outro nível de contraste. Personalizações e transparência podem alterar esses resultados.
+- Mesmo fundo do editor em números, sinais e dobras, inclusive na linha atual. A opção de transparência remove esses fundos.
+- No mini.pick (`<leader>ff`), os trechos encontrados têm fundo dourado e a linha selecionada tem destaque azul.
+- Texto principal com contraste de **6,19:1 no light** e **11,26:1 no dark**. Todos os acentos passam de **4,5:1** no fundo normal e em `surface2`; comentários passam de 4,5:1 no fundo normal. Cores decorativas e texto atenuado da interface usam outro nível de contraste. Personalizações e transparência podem alterar esses resultados.
 
 ## Instalação
 

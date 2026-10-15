@@ -6,7 +6,7 @@ local M = {}
 --- Lotus accents are darkened for readable text on paper and UI surfaces.
 M.base = {
   light = {
-    bg = "#f2ecbc", fg = "#353545",
+    bg = "#f2ecbc", fg = "#545464",
     red = "#a52b3d", orange = "#915000", yellow = "#68602f",
     green = "#46612f", cyan = "#3d625c", azure = "#624c83", blue = "#3b5685",
   },
@@ -31,7 +31,7 @@ M.base = {
 ---@class kanamono.Colors: kanamono.BasePalette
 ---@field variant "light"|"dark"
 ---@field none "NONE"
----@field gutter string     distinct number/sign/fold column background
+---@field gutter string     number/sign/fold column background (matches editor by default)
 ---@field bg_float string
 ---@field bg_dim string      background for inactive windows (dim_inactive)
 ---@field surface1 string    cursorline, subtle rows
@@ -70,12 +70,12 @@ function M.get(variant, opts)
   -- perceived lightness step from bg in light and dark).
   c.select = c.surface3
   c.border = blend(tint, c.bg, is_light and 0.24 or 0.22)
-  c.muted = blend(c.fg, c.bg, is_light and 0.64 or 0.50)
+  c.muted = blend(c.fg, c.bg, is_light and 0.68 or 0.50)
   -- Comments step back from the code without dropping below AA (4.5:1): fg
   -- with the UI's blue lean, faded toward bg. Italic does the rest.
-  c.comment = blend(blend(tint, c.fg, 0.35), c.bg, is_light and 0.84 or 0.7)
+  c.comment = blend(blend(tint, c.fg, 0.35), c.bg, is_light and 0.87 or 0.7)
   c.bg_dim = is_light and blend(c.fg, c.bg, 0.03) or util.darken(c.bg, 0.12)
-  c.gutter = is_light and "#e7dfb0" or "#2a2a37"
+  c.gutter = c.bg
   c.bg_float = c.bg
   c.accent = c.blue
   -- Tinted accent, same hue family as the UI so it stays clean. Stronger than

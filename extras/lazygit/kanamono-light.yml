@@ -8,16 +8,16 @@ gui:
       - "#3b5685"
       - "bold"
     inactiveBorderColor:
-      - "#cac3a7"
+      - "#cec7ab"
     searchingActiveBorderColor:
       - "#68602f"
       - "bold"
     optionsTextColor:
       - "#3b5685"
     selectedLineBgColor:
-      - "#e5deb5"
+      - "#e6e0b6"
     inactiveViewSelectedLineBgColor:
-      - "#eae3b8"
+      - "#eae4b8"
     cherryPickedCommitFgColor:
       - "#f2ecbc"
     cherryPickedCommitBgColor:
@@ -29,9 +29,9 @@ gui:
     unstagedChangesColor:
       - "#a52b3d"
     defaultFgColor:
-      - "#353545"
+      - "#545464"
   authorColors:
-    "*": "#353545"
+    "*": "#545464"
   branchColors:
     "main": "#3b5685"
     "master": "#3b5685"

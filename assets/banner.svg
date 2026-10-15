@@ -8,9 +8,9 @@
 <rect width="1280" height="420" fill="#f2ecbc"/>
 <rect width="1280" height="420" fill="#1f1f28" clip-path="url(#right)"/>
 <g clip-path="url(#left)">
-<text x="640" y="200" text-anchor="middle" font-family="'Inter','SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-size="112" font-weight="700" letter-spacing="-3" fill="#353545">kanamono</text>
-<text x="640" y="258" text-anchor="middle" font-family="'Inter','SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-size="24" fill="#353545" letter-spacing="0.5">kanagawa inspired · warm paper, deep ink, readable code</text>
-<text x="640" y="372" text-anchor="middle" font-family="'JetBrains Mono','SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="17" fill="#797770" letter-spacing="4">NEOVIM · GHOSTTY · KITTY · LAZYGIT</text>
+<text x="640" y="200" text-anchor="middle" font-family="'Inter','SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-size="112" font-weight="700" letter-spacing="-3" fill="#545464">kanamono</text>
+<text x="640" y="258" text-anchor="middle" font-family="'Inter','SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-size="24" fill="#545464" letter-spacing="0.5">kanagawa inspired · warm paper, deep ink, readable code</text>
+<text x="640" y="372" text-anchor="middle" font-family="'JetBrains Mono','SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="17" fill="#878580" letter-spacing="4">NEOVIM · GHOSTTY · KITTY · LAZYGIT</text>
 </g>
 <g clip-path="url(#right)">
 <text x="640" y="200" text-anchor="middle" font-family="'Inter','SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-size="112" font-weight="700" letter-spacing="-3" fill="#dcd7ba">kanamono</text>

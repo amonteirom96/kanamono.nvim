@@ -4,6 +4,7 @@
 return function(c, o)
   local util = require("kanamono.util")
   local float_bg = o.transparent and c.none or (o.float.solid and c.surface1 or c.bg_float)
+  local pick_selection = util.blend(c.accent, c.bg, c.variant == "light" and 0.18 or 0.28)
   local bg = o.transparent and c.none or c.bg
 
   return {
@@ -28,9 +29,9 @@ return function(c, o)
     MiniPickHeader = { fg = c.fg, bold = true },
     MiniPickIconDirectory = { fg = c.fg },
     MiniPickIconFile = { fg = c.fg },
-    MiniPickMatchCurrent = { bg = c.select, bold = true },
+    MiniPickMatchCurrent = { fg = c.fg, bg = pick_selection, bold = true },
     MiniPickMatchMarked = { bg = util.blend(c.accent, c.bg, 0.18) },
-    MiniPickMatchRanges = { fg = c.accent, bold = true },
+    MiniPickMatchRanges = { fg = c.bg, bg = c.yellow, bold = true, nocombine = true },
     MiniPickPreviewLine = { bg = c.surface2 },
     MiniPickPreviewRegion = { bg = c.surface3 },
     MiniPickPrompt = { fg = c.fg, bg = float_bg },

@@ -32,8 +32,13 @@ for _, name in ipairs({ "kanamono-light", "kanamono-dark", "kanamono" }) do
   end
   for _, group in ipairs({ "LineNr", "LineNrAbove", "LineNrBelow", "CursorLineNr", "SignColumn", "FoldColumn", "CursorLineSign", "CursorLineFold", "DiagnosticSignError" }) do
     local h = vim.api.nvim_get_hl(0, { name = group, link = false })
-    check(h.bg == tonumber(c.gutter:sub(2), 16) and h.bg ~= normal.bg, name .. ": distinct gutter " .. group)
+    check(h.bg == tonumber(c.gutter:sub(2), 16) and h.bg == normal.bg, name .. ": uniform gutter " .. group)
   end
+  local ranges = vim.api.nvim_get_hl(0, { name = "MiniPickMatchRanges", link = false })
+  check(ranges.bg == tonumber(c.yellow:sub(2), 16), name .. ": picker matches have yellow background")
+  check(require("kanamono.util").contrast(c.bg, c.yellow) >= 4.5, name .. ": picker match text readable")
+  local current = vim.api.nvim_get_hl(0, { name = "MiniPickMatchCurrent", link = false })
+  check(current.bg ~= normal.bg and current.bg ~= ranges.bg, name .. ": picker selected row distinct from matches")
   -- color where it matters
   local add = vim.api.nvim_get_hl(0, { name = "GitSignsAdd" }).fg
   local del = vim.api.nvim_get_hl(0, { name = "GitSignsDelete" }).fg
