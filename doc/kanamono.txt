@@ -1,0 +1,50 @@
+*kanamono.txt*  Kanagawa colors with readable light text and a distinct gutter.
+
+USAGE                                                       *kanamono*
+    :colorscheme kanamono
+    :colorscheme kanamono-light
+    :colorscheme kanamono-dark
+
+kanamono follows 'background'. Explicit light/dark names force that variant.
+Requires Neovim 0.10+ and truecolor. No external theme dependency.
+
+CONFIGURATION                                               *kanamono-setup*
+Call require('kanamono').setup(opts) before loading the colorscheme.
+Defaults and examples are in README.md and lua/kanamono/config.lua.
+
+variant          "auto", "light" or "dark" (default "auto")
+transparent      false; true removes editor, gutter and float backgrounds
+terminal_colors  true; sets terminal_color_0 through terminal_color_15
+dim_inactive     false; dims unfocused window backgrounds
+muted_comments   false; true reduces comment contrast
+mono             false; true uses foreground for syntax colors
+float.solid      false; true fills floats and hides their borders
+cache            true; compiles highlights to Lua bytecode
+styles           comments, keywords, functions, variables, strings,
+                 types, constants, operators: highlight attribute tables
+integrations     blink, dropbar, gitsigns, grug_far, lazy, mason, mini,
+                 semantic_tokens, statusline, treesitter: booleans
+on_colors        function(colors, variant); modify palette before highlights
+on_highlights    function(highlights, colors, variant); modify final groups
+
+Palette fields include bg, fg, gutter, surface1/2/3, select, border, muted,
+comment, accent, search, red, orange, yellow, green, cyan, azure, blue,
+code.{string,func,type,constant,keyword,operator}, git and diag.
+The field azure carries the violet keyword accent.
+
+API                                                         *kanamono-api*
+require('kanamono').colors(variant)       palette for light/dark
+require('kanamono').highlights(variant)   final highlight table
+require('kanamono').extras(dir)          generate tool themes
+
+COMMANDS                                                    *kanamono-commands*
+:KanamonoCompile           Clear cache and reload the active theme.
+:KanamonoClearCache        Remove compiled highlights.
+:KanamonoExtras [dir]      Generate Ghostty, Kitty and Lazygit themes.
+
+CREDITS                                                     *kanamono-credits*
+Implementation based on amonteirom96/onemono.nvim.
+Wave/Lotus palette adapted from rebelot/kanagawa.nvim (MIT).
+See LICENSE for copyright notices.
+
+vim:tw=78:ts=8:noet:ft=help:norl:
