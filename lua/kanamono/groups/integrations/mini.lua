@@ -4,8 +4,8 @@
 return function(c, o)
   local util = require("kanamono.util")
   local float_bg = o.transparent and c.none or (o.float.solid and c.surface1 or c.bg_float)
-  local pick_selection = util.blend(c.accent, c.bg, c.variant == "light" and 0.18 or 0.28)
-  local pick_match = c.variant == "light" and util.darken(c.yellow, 0.12) or c.yellow
+  local pick_selection = util.blend(c.accent, c.bg, 0.12)
+  local pick_match = c.red
   local bg = o.transparent and c.none or c.bg
 
   return {

@@ -71,12 +71,13 @@ ex.setup({ on_highlights = function(hl) hl.Normal.fg = "#ff0000" end })
 vim.cmd.colorscheme("kanamono-dark")
 check(vim.api.nvim_get_hl(0, { name = "Normal" }).fg == 0xff0000, "on_highlights applied")
 
--- red is reserved for errors: nothing in code or kinds/icons uses it
+-- Red is reserved for errors/deletions and picker query matches.
 for _, v in ipairs({ "light", "dark" }) do
   local c = ex.colors(v)
   local allowed = {
     Error = true, ErrorMsg = true, StderrMsg = true, NvimInternalError = true, SpellBad = true,
     healthError = true, RedrawDebugRecompose = true, MasonError = true, LazyTaskError = true,
+    MiniPickMatchRanges = true,
     ["@comment.error"] = true, ["@lsp.type.unresolvedReference"] = true,
   }
   for n, spec in pairs(ex.highlights(v)) do

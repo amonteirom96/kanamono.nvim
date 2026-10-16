@@ -2,7 +2,7 @@
 local M = {}
 
 --- Bump to invalidate every user's compiled cache after changing highlights.
-M.version = "0.1.2"
+M.version = "0.1.4"
 
 local cache_dir = vim.fn.stdpath("cache") .. "/kanamono"
 local configured = false
