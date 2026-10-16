@@ -35,10 +35,15 @@ for _, name in ipairs({ "kanamono-light", "kanamono-dark", "kanamono" }) do
     check(h.bg == tonumber(c.gutter:sub(2), 16) and h.bg == normal.bg, name .. ": uniform gutter " .. group)
   end
   local ranges = vim.api.nvim_get_hl(0, { name = "MiniPickMatchRanges", link = false })
-  check(ranges.bg == tonumber(c.yellow:sub(2), 16), name .. ": picker matches have yellow background")
-  check(require("kanamono.util").contrast(c.bg, c.yellow) >= 4.5, name .. ": picker match text readable")
+  check(ranges.fg ~= normal.fg and ranges.bg == nil, name .. ": picker matches have colored text without background")
+  check(not ranges.nocombine, name .. ": picker matches combine with row selection")
   local current = vim.api.nvim_get_hl(0, { name = "MiniPickMatchCurrent", link = false })
   check(current.bg ~= normal.bg and current.bg ~= ranges.bg, name .. ": picker selected row distinct from matches")
+  check(current.fg == nil, name .. ": picker selected row preserves match and icon colors")
+  local contrast = require("kanamono.util").contrast
+  local match_color = ("#%06x"):format(ranges.fg)
+  check(contrast(match_color, c.bg) >= 4.5, name .. ": picker match text readable")
+  check(contrast(match_color, ("#%06x"):format(current.bg)) >= 4.5, name .. ": selected picker match text readable")
   -- color where it matters
   local add = vim.api.nvim_get_hl(0, { name = "GitSignsAdd" }).fg
   local del = vim.api.nvim_get_hl(0, { name = "GitSignsDelete" }).fg

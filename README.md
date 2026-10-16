@@ -32,6 +32,8 @@ Neovim 0.10+ e terminal com truecolor. Com lazy.nvim:
 
 Para experimentar este checkout local, use `dir = "/Users/arthurmonteiro/Sites/themes/kanamono.nvim"` no lugar do nome do repositório.
 
+Não adicione `build = ":KanamonoCompile"`: o cache é gerado automaticamente ao aplicar o tema. Esse hook faz o lazy.nvim carregar o tema durante a instalação, antes de atualizar o índice de módulos, e pode causar `module 'kanamono' not found` na primeira abertura. Reserve `:KanamonoCompile` para recompilar manualmente após personalizações.
+
 ```vim
 colorscheme kanamono       " segue background
 colorscheme kanamono-dark  " força dark

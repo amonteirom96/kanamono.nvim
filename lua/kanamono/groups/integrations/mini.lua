@@ -5,6 +5,7 @@ return function(c, o)
   local util = require("kanamono.util")
   local float_bg = o.transparent and c.none or (o.float.solid and c.surface1 or c.bg_float)
   local pick_selection = util.blend(c.accent, c.bg, c.variant == "light" and 0.18 or 0.28)
+  local pick_match = c.variant == "light" and util.darken(c.yellow, 0.12) or c.yellow
   local bg = o.transparent and c.none or c.bg
 
   return {
@@ -29,9 +30,11 @@ return function(c, o)
     MiniPickHeader = { fg = c.fg, bold = true },
     MiniPickIconDirectory = { fg = c.fg },
     MiniPickIconFile = { fg = c.fg },
-    MiniPickMatchCurrent = { fg = c.fg, bg = pick_selection, bold = true },
+    -- mini.pick draws the current row above match ranges: only set its
+    -- background so matched text and icon foregrounds remain visible.
+    MiniPickMatchCurrent = { bg = pick_selection, bold = true },
     MiniPickMatchMarked = { bg = util.blend(c.accent, c.bg, 0.18) },
-    MiniPickMatchRanges = { fg = c.bg, bg = c.yellow, bold = true, nocombine = true },
+    MiniPickMatchRanges = { fg = pick_match, bold = true },
     MiniPickPreviewLine = { bg = c.surface2 },
     MiniPickPreviewRegion = { bg = c.surface3 },
     MiniPickPrompt = { fg = c.fg, bg = float_bg },
